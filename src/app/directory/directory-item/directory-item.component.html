@@ -1,0 +1,8 @@
+<div class="thumbnail" [attr.data-cst-recno]="Member.cst_recno" title="{{ Member.ind_first_name }} {{ Member.ind_last_name }}">
+  <h4>{{ Member.ind_first_name }} {{ Member.ind_last_name }}</h4>
+  <p class="email" [title]="Member.eml_address"><strong>{{ Member.eml_address }}</strong></p>
+  <address>
+    {{ Member.adr_line1 }}<br>
+    {{ Member.adr_city }}, {{ Member.adr_state }} {{ Member.adr_post_code }}
+  </address>
+</div>

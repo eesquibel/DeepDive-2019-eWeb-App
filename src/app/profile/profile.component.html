@@ -1,0 +1,21 @@
+<ng-container *ngIf="customer$ | async as Customer; else loading">
+
+
+<h1>{{ Customer.cst_ind_full_name_dn }}</h1>
+<ul class="nav nav-tabs">
+  <li routerLinkActive="active">
+      <a [routerLink]="['cst']">Customer</a>
+  </li>
+  <li routerLinkActive="active">
+      <a [routerLink]="['ind']">Individual</a>
+  </li>
+  <li routerLinkActive="active">
+      <a [routerLink]="['adr']">Address</a>
+  </li>
+</ul>
+<main>
+  <router-outlet></router-outlet>
+</main>
+</ng-container>
+
+<ng-template #loading><p>Loading...</p></ng-template>

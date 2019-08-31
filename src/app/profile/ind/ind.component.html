@@ -1,0 +1,23 @@
+<form *ngIf="individual$ | async as Individual" class="form-horizontal">
+    <fieldset [formGroup]="Form">
+      <div class="control-group">
+        <label class="control-label" for="ind_first_name">First Name</label>
+        <div class="controls">
+            <input type="text" id="ind_first_name" placeholder="first name" formControlName="ind_first_name" required>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="ind_last_name">Last Name</label>
+        <div class="controls">
+            <input type="text" id="ind_last_name" placeholder="last name" formControlName="ind_last_name" required>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="ind_badge_name">Preferred Name</label>
+        <div class="controls">
+            <input type="text" id="ind_badge_name" placeholder="preferred name" formControlName="ind_badge_name">
+        </div>
+      </div>
+      <app-profile-save Type="ind" [Data]="Form.value" (Start)="onSaveStart($event)" (Complete)="onSaveComplete($event)"></app-profile-save>
+    </fieldset>
+  </form>

@@ -1,0 +1,35 @@
+<form *ngIf="customer$ | async as Customer" class="form-horizontal" [formGroup]="Form">
+  <fieldset>
+    <div class="control-group">
+      <label class="control-label">Record #</label>
+      <div class="controls">
+        <span class="uneditable-input">{{ Customer.cst_recno }}</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Full Name</label>
+      <div class="controls">
+        <span class="uneditable-input">{{ Customer.cst_ind_full_name_dn }}</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Organization</label>
+      <div class="controls">
+        <span class="uneditable-input">{{ Customer.cst_org_name_dn }}</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Email</label>
+      <div class="controls">
+        <span class="uneditable-input">{{ Customer.cst_eml_address_dn }}</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="cst_bio">Biography</label>
+      <div class="controls">
+        <textarea formControlName="cst_bio"></textarea>
+      </div>
+    </div>
+    <app-profile-save Type="cst" [Data]="Form.value" (Start)="onSaveStart($event)" (Complete)="onSaveComplete($event)"></app-profile-save>
+  </fieldset>
+</form>
