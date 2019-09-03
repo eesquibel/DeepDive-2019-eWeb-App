@@ -6,7 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SortPipe implements PipeTransform {
 
   transform(value: Array<any>, key: string): any {
-    const sorted = value.sort((a, b) => {
+    const copy = [...value];
+    return copy.sort((a, b) => {
       if (key === undefined) {
         return 0;
       }
@@ -17,9 +18,5 @@ export class SortPipe implements PipeTransform {
 
       return 0;
     });
-
-    value = null;
-
-    return sorted;
   }
 }

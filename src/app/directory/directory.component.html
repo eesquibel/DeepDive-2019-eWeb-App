@@ -10,7 +10,7 @@
 </p>
 
 <div *ngIf="directory$ | async as Directory; else loading">
-  <div class="row-fluid" *ngFor="let chunks of Directory | filter:'adr_state':filter:column | sort:column:filter | chunk:3:filter:column">
+  <div class="row-fluid" *ngFor="let chunks of Directory | filter:'adr_state':filter | sort:column | chunk:chunks">
     <app-directory-item *ngFor="let member of chunks" class="span4" [Member]="member"></app-directory-item>
   </div>
 </div>

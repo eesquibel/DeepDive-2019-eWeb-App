@@ -17,6 +17,7 @@ export class DirectoryComponent implements OnInit {
 
   public column: 'ind_first_name' | 'ind_last_name' = 'ind_last_name';
   public filter: string;
+  public chunks: number = 3;
 
   constructor(private directory: DirectoryService) {
   }
