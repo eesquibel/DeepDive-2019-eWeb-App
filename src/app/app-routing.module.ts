@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { DefaultComponent } from './default/default.component';
+import { DirectoryComponent } from './directory/directory.component';
+import { AdrComponent } from './profile/adr/adr.component';
 import { CstComponent } from './profile/cst/cst.component';
 import { IndComponent } from './profile/ind/ind.component';
-import { AdrComponent } from './profile/adr/adr.component';
-import { DirectoryComponent } from './directory/directory.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
+  {
+    path: 'DynamicPage.aspx',
+    component: DefaultComponent
+  },
   {
     path: 'profile',
     component: ProfileComponent,
